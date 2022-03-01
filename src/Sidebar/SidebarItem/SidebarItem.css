@@ -1,0 +1,39 @@
+.sidebarItem{
+    border-left: 3px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: rgb(218, 218, 218);
+    height: 38px;
+    position: relative;
+    border-left: 3px;
+    border-color: #231B2E;
+    border-style: solid;
+}
+
+.sidebarItem:hover{
+    color: #fff
+}
+
+.sidebarItemSelected{
+    color: #fff;
+    background-color: #393243;
+    border-left: 3px;
+    border-color: #7200A1;
+    border-style: solid;
+}
+.icon{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.sidebaritemContent{
+    display: inline;
+    position: absolute;
+    font-size: 13px;
+    font-weight: 700;
+    top: 12px;
+}
