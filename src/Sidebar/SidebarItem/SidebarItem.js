@@ -6,12 +6,8 @@ import './SidebarItem.css'
 
 function SidebarItem(props)
 {
-    useEffect(() => {
-        
-    }, [])
-
     return(
-        <div>
+        <div className = {props.type === 'main' ? 'main-sidebar' : 'sub-sidebar'}>
             {
                 props.datas.map(data => (
                     <a href='#' key={data.name}>
@@ -24,8 +20,7 @@ function SidebarItem(props)
                         </div> 
                     </a>
                 ))
-            }
-            
+            }  
         </div>
     )
 }

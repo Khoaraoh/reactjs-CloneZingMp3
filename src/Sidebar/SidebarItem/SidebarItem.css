@@ -1,3 +1,12 @@
+.main-sidebar{
+    margin-bottom: 16px;
+}
+
+.sub-sidebar{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
 .sidebarItem{
     border-left: 3px;
     padding-top: 7px;
