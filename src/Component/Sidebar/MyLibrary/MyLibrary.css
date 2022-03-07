@@ -2,7 +2,7 @@
     padding-top: 15px;
 }
 
-.myLibrary p{
+.myLibrary .title{
     margin: 0px 28px 8px 28px;
     text-transform: uppercase;
     color: #fefefe;
@@ -11,8 +11,106 @@
 }
 
 .myLibraryItem{
+    position: relative;
     padding: 8px 25px;
     font-size: 13px;
-    font-weight: 100;
     color: #fefefe;
+}
+
+.myLibraryItem span{
+    position: absolute;
+    top: 12px;
+    left: 60px;
+    text-transform: none;
+    font-weight: 300; 
+}
+
+.icon{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.editButton{
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    position: absolute;
+    left: 200px;
+    bottom: 15px;
+}
+
+.editCheckbox{
+    position: fixed;
+    display: block;
+    top: 0px;
+    right: 0px;
+    background-color: #432275;
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    width: 540px;
+}
+
+.editCheckbox .subtitle{
+    color: gray;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.button{
+    text-align: right;
+}
+
+.closeButton{
+    padding: 9px 24px;
+    border: 1px solid #fefefe;
+    border-radius: 999px;
+    margin-right: 10px;
+    background-color: #543680;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+    font-weight: 400;
+    display: inline-block;
+}
+
+.submitButton{
+    padding: 9px 24px;
+    border: 1px solid #fefefe;
+    border-radius: 999px;
+    margin-right: 10px;
+    background-color: #670091;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+    font-weight: 400;
+    display: inline-block;
+}
+
+.closeButton:hover{
+    cursor: pointer;
+    background-color: #4c2a7e;
+    margin-left: 100px;
+}
+
+.submitButton:hover{
+    cursor: pointer;
+    background-color: #58027a;
+}
+
+.editCheckboxItem{
+    position: relative;
+    padding: 12px 0px;
+    color: #fefefe;
+}
+
+.editCheckboxItem span{
+    position: absolute;
+    top: 15px;
+    left: 45px;
 }
