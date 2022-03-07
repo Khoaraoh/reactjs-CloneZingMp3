@@ -1,0 +1,18 @@
+.myLibrary{
+    padding-top: 15px;
+}
+
+.myLibrary p{
+    margin: 0px 28px 8px 28px;
+    text-transform: uppercase;
+    color: #fefefe;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.myLibraryItem{
+    padding: 8px 25px;
+    font-size: 13px;
+    font-weight: 100;
+    color: #fefefe;
+}

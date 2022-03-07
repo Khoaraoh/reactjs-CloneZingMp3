@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import './Sidebar.css'
 import SidebarItem from './SidebarItem/SidebarItem'
+import MyLibrary from './MyLibrary/MyLibrary'
 
 const mainsidebarData = [
     {
@@ -77,6 +78,8 @@ function Sidebar()
                 <p>Nghe nhạc không quảng cáo cùng kho nhạc VIP</p>
                 <button className='vipUpgradeButton'>Nâng cấp VIP</button>
             </div>
+
+            <MyLibrary/>
         </div>
     )
 }
