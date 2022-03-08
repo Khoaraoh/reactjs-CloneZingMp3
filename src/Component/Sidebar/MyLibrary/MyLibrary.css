@@ -43,7 +43,8 @@
 
 .editCheckbox{
     position: fixed;
-    display: block;
+    /* display: block */
+    display: none; 
     top: 0px;
     right: 0px;
     background-color: #432275;
@@ -107,6 +108,11 @@
     position: relative;
     padding: 12px 0px;
     color: #fefefe;
+    cursor: pointer;
+}
+
+.editCheckboxItem:hover{
+    color: #BE41AC;
 }
 
 .editCheckboxItem span{

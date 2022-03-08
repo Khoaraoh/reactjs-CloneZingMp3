@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import './Sidebar.css'
 import SidebarItem from './SidebarItem/SidebarItem'
@@ -80,6 +82,11 @@ function Sidebar()
             </div>
 
             <MyLibrary/>
+
+            <div className='addPlaylist'>
+                <FontAwesomeIcon className='icon' icon={faCoffee} />
+                <span className='title'>Tạo playlist mới</span>
+            </div>
         </div>
     )
 }

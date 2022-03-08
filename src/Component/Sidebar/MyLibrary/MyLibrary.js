@@ -1,9 +1,10 @@
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import './MyLibrary.css'
 
-const myLibrary = [
+const mydataLibrary = [
     {
         name: "Bài hát",
         isSelected: false,
@@ -33,6 +34,30 @@ const myLibrary = [
 
 function MyLibrary()
 {
+    const [myLibrary, setMyLibrary] = useState(mydataLibrary)
+
+    function handleEditCheckbox(name)
+    {
+        // let newdata = myLibrary
+
+        // for(var i=0;i<newdata.length;i++)
+        // {
+        //     if(newdata[i].name===name)
+        //     {
+        //         if(newdata[i].isSelected===true)
+        //         {
+        //             newdata[i].isSelected = false
+        //         }
+        //         else
+        //         {
+        //             newdata[i].isSelected = true
+        //         }
+        //     }
+        //     return setMyLibrary(newdata)
+        // }
+    }
+
+    console.log('re-render')
     return(
         <div className='myLibrary'>
             <p className='title'>Thư viện</p>
@@ -53,8 +78,10 @@ function MyLibrary()
                 <h3>Thư Viện Cá Nhân</h3>
                 <p className='subtitle'>Bạn có thể tuỳ chỉnh danh sách thư viện cá nhân.</p>
                 <div>
-                    {myLibrary.map((item, index)=>(
-                        <div className='editCheckboxItem' key={index}>
+                    {myLibrary.map((item)=>(
+                        <div className='editCheckboxItem' key={item.name}
+                            onClick={() => handleEditCheckbox(item.name)}
+                        >
                             <input type='checkbox' checked={item.isSelected}></input>
                             <img src={item.imgSource}></img>
                             <span>{item.name}</span>
