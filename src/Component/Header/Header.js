@@ -74,18 +74,22 @@ function Header()
                 </div>
             </div>
             <div className='rightButton'>
-                <button className='button'>
+                <div className='rightButtonItem'>
                     <MyIcon className='buttonIcon' name={FcTemplate}/>
-                </button>
-                <button className='button'>
+                    <button className='button'></button>
+                </div>
+                <div className='rightButtonItem'>
                     <MyIcon className='buttonIcon' name={RiVipDiamondLine}/>
-                </button>
-                <button className='button'>
+                    <button className='button'></button>
+                </div>
+                <div className='rightButtonItem'>
                     <MyIcon className='buttonIcon' name={MdOutlineFileUpload}/>
-                </button>
-                <button className='button'>
-                    <MyIcon className='buttonIcon' name={FiSettings}/>    
-                </button>
+                    <button className='button'></button>
+                </div>
+                <div className='rightButtonItem'>
+                    <MyIcon className='buttonIcon' name={FiSettings}/>
+                    <button className='button'></button>
+                </div>
                 <button className='button avatar'></button>
             </div>
         </div>
