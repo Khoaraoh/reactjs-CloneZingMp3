@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import './MyLibrary.css'
+import MyIcon from '../../General/MyIcon'
+import { MdOutlineEdit } from 'react-icons/md'
 
 const mydataLibrary = [
     {
@@ -63,7 +63,7 @@ function MyLibrary()
             <p className='title'>Thư viện</p>
             <button 
                 className='editButton'
-                    ><FontAwesomeIcon className='icon' icon={faCoffee} />
+                    ><MyIcon name={MdOutlineEdit} className='icon'/>
             </button>
             {myLibrary.map((item, index)=>(
                 item.isSelected && 

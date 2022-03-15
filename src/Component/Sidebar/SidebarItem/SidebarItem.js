@@ -1,21 +1,24 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import MyIcon from '../../General/MyIcon'
 
 import './SidebarItem.css'
 
 
 function SidebarItem(props)
 {
+    const iconName = [];
+    props.datas.map((data, index) =>{
+        iconName[index] = data.icon;
+    });
+    console.log(iconName)
     return(
         <div className = {props.type === 'main' ? 'main-sidebar' : 'sub-sidebar'}>
             {
-                props.datas.map(data => (
+                props.datas.map((data, index) => (
                     <a href='#' key={data.name}>
-                        {console.log()}
                         <div 
                             className= {data.name === props.selectedItem ? 'sidebarItem sidebarItemSelected': 'sidebarItem'} 
                             onClick={() => props.onClick(data.name)}>
-                                <FontAwesomeIcon className='icon' icon={faCoffee} />
+                                <MyIcon name = {iconName[index]} className='icon'/>
                                 <p className='sidebaritemContent'>{data.name}</p>
                         </div> 
                     </a>

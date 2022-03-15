@@ -1,49 +1,52 @@
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { MdMusicVideo, MdMultilineChart, MdOutlineRadio, MdOutlineFeed, 
+         MdStarOutline, MdOutlineVideoStable, MdOutlineEdit} from 'react-icons/md'
+import { BiDisc, BiCategoryAlt, BiPlus } from 'react-icons/bi'
+import { FiMusic } from 'react-icons/fi'
 
 import './Sidebar.css'
 import SidebarItem from './SidebarItem/SidebarItem'
 import MyLibrary from './MyLibrary/MyLibrary'
+import MyIcon from '../General/MyIcon'
 
 const mainsidebarData = [
     {
-        icon: "fa-solid fa-user-music",
+        icon: MdMusicVideo,
         name: "Cá Nhân"
     },
     {
-        icon: "fa-solid fa-user-music",
+        icon: BiDisc,
         name: "Khám Phá"
     },
     {
-        icon: "fa-solid fa-user-music",
+        icon: MdMultilineChart,
         name: "#zingchart"
     },
     {
-        icon: "fa-solid fa-user-music",
+        icon: MdOutlineRadio,
         name: "Radio"
     },
     {
-        icon: "fa-solid fa-user-music",
+        icon: MdOutlineFeed,
         name: "Theo Dõi"
     }
 ]
 
 const subsidebarData = [
     {
-        icon: "fa-solid fa-user-music",
+        icon: FiMusic,
         name: "Nhạc Mới"
     },
     {
-        icon: "fa-solid fa-user-music",
+        icon: BiCategoryAlt,
         name: "Thể Loại"
     },
     {
-        icon: "fa-solid fa-user-music",
+        icon: MdStarOutline,
         name: "Top 100"
     },
     {
-        icon: "fa-solid fa-user-music",
+        icon: MdOutlineVideoStable,
         name: "MV"
     }
 ]
@@ -84,7 +87,7 @@ function Sidebar()
             <MyLibrary/>
 
             <div className='addPlaylist'>
-                <FontAwesomeIcon className='icon' icon={faCoffee} />
+                <MyIcon name={BiPlus} className='icon'/>
                 <span className='title'>Tạo playlist mới</span>
             </div>
         </div>
