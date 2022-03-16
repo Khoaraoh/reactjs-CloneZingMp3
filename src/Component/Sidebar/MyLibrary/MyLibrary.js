@@ -57,13 +57,12 @@ function MyLibrary()
         // }
     }
 
-    console.log('re-render')
     return(
         <div className='myLibrary'>
             <p className='title'>Thư viện</p>
             <button 
                 className='editButton'
-                    ><MyIcon name={MdOutlineEdit} className='icon'/>
+                    ><MyIcon name={MdOutlineEdit} className='editIcon'/>
             </button>
             {myLibrary.map((item, index)=>(
                 item.isSelected && 

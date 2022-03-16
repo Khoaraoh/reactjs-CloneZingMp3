@@ -74,3 +74,19 @@
     position: absolute;
     top: 18px
 }
+
+.sidebar .subMenu{
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.subMenu::-webkit-scrollbar {
+    width: 5px;
+}
+   
+.subMenu::-webkit-scrollbar-thumb {
+    background: #67636d;
+    border-radius: 4px;
+}
+  

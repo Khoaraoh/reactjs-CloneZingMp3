@@ -72,19 +72,21 @@ function Sidebar()
             
             <div className='divide'></div>
             
-            <SidebarItem
-                datas = {subsidebarData}
-                onClick ={handleSelectItem}
-                selectedItem = {selectedItem}
-                type = "sub"
-            ></SidebarItem>
+            <div className='subMenu'>
+                <SidebarItem
+                    datas = {subsidebarData}
+                    onClick ={handleSelectItem}
+                    selectedItem = {selectedItem}
+                    type = "sub"
+                ></SidebarItem>
 
-            <div className='vipUpgrade'>
-                <p>Nghe nhạc không quảng cáo cùng kho nhạc VIP</p>
-                <button className='vipUpgradeButton'>Nâng cấp VIP</button>
+                <div className='vipUpgrade'>
+                    <p>Nghe nhạc không quảng cáo cùng kho nhạc VIP</p>
+                    <button className='vipUpgradeButton'>Nâng cấp VIP</button>
+                </div>
+
+                <MyLibrary/>
             </div>
-
-            <MyLibrary/>
 
             <div className='addPlaylist'>
                 <MyIcon name={BiPlus} className='icon'/>

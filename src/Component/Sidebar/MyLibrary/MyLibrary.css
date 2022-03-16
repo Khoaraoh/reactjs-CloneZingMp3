@@ -8,6 +8,7 @@
     color: #fefefe;
     font-weight: 700;
     font-size: 12px;
+    display: inline-block;
 }
 
 .myLibraryItem{
@@ -32,13 +33,26 @@
     margin-right: 10px;
 }
 
+.editIcon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
 .editButton{
     height: 26px;
     width: 26px;
     border-radius: 50%;
-    position: absolute;
-    left: 200px;
-    bottom: 15px;
+    display: inline-block;
+    float: right;
+    margin-right: 24px;
+    background-color: #231B2E;
+    color: white;
+}
+
+.editButton:hover{
+    background-color: #393243;
+    cursor: pointer;
 }
 
 .editCheckbox{

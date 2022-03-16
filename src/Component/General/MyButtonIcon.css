@@ -1,0 +1,16 @@
+.button{
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background-color: #120C1C;
+}
+
+.button:hover{
+    background-color: #393243;
+}
+
+.buttonIcon{
+    color: #fff;
+    height: 16px;
+    width: 16px;
+}
