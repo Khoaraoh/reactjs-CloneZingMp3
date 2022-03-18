@@ -5,21 +5,28 @@
     position: fixed;
     bottom: 0px;
     border-top: 0.5px solid rgb(155, 154, 154);
+    padding: 15px 20px;
 }
 
 .musicPlayer .musicInfo{
     display: inline-block;
+    height: 64px;
+    position: relative;
 }
 
 .musicPlayer .musicInfo .image{
     height: 64px;
     width: 64px;
     border-radius: 4px;
+    margin-right: 10px;
 }
 
 .musicPlayer .musicInfo .songInfo{
     display: inline-block;
     color: #fff;
+    width: 150px;
+    position: absolute;
+    top: 16px;
 }
 
 .songInfo .songName{
@@ -35,4 +42,22 @@
     display: inline-block;
     font-size: 12px;
     color: #767E70;
+}
+
+.musicInfo .musicInfoIcon{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 244px;
+    width: 72px;
+}
+
+.musicInfo .likeNoti{
+    display: block;
+    width: 360px;
+    height: 32px;
+    background-color: #670091;
+    position: fixed;
+    top: 75%;
+    left: 0px;
 }

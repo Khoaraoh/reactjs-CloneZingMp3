@@ -4,8 +4,9 @@ function MyButtonIcon(props)
 {
     const MyIconName = props.name;
     return(
-        <button className='button'>
-            <MyIconName className = {"buttonIcon " + props.className} />
+        <button className='button' onClick = {props.onClick}>
+            {props.isSelected ? <MyIconName className = {"buttonIconSelected " + props.className}/> 
+                              : <MyIconName className = {"buttonIcon " + props.className} />}
         </button>
     )
 }
