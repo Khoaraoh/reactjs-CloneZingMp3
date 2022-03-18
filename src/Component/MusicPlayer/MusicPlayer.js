@@ -1,9 +1,11 @@
 import MyIcon from '../General/MyIcon'
 import MyButtonIcon from '../General/MyIconButton'
-import { BsAppIndicator } from 'react-icons/bs'
+import { BsAppIndicator, BsFillPlayFill } from 'react-icons/bs'
 import { HiOutlineHeart, HiHeart} from 'react-icons/hi'
 import { MdOutlineMoreHoriz } from 'react-icons/md'
-import { ImCross } from 'react-icons/im'
+import { ImCross,ImLoop } from 'react-icons/im'
+import { FaRandom } from 'react-icons/fa'
+import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io"
 import { useState, useRef } from 'react'
 import './MusicPlayer.css'
 
@@ -77,6 +79,16 @@ function MusicPlayer()
                         <MyIcon name={ImCross}></MyIcon>
                     </div>
                 </div>
+            </div>
+
+            <div className='player'>
+                <MyButtonIcon name={FaRandom}/>
+                <MyButtonIcon name={IoMdSkipBackward}/>
+                <div className='playButton'>
+                    <MyIcon name={BsFillPlayFill} className='playButtonIcon'/>
+                </div>
+                <MyButtonIcon name={IoMdSkipForward}/>
+                <MyButtonIcon name={ImLoop}/>
             </div>
         </div>
     )

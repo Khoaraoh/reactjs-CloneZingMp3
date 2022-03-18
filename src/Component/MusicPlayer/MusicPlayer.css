@@ -11,6 +11,7 @@
 .musicPlayer .musicInfo{
     display: inline-block;
     height: 64px;
+    width: 33%;
     position: relative;
 }
 
@@ -97,4 +98,17 @@
     100%{
         margin-left: -350px;
     }
+}
+
+.player{
+    display: inline-block;
+}
+
+.player .playButton{
+    display: inline-block;
+}
+
+.player .playButton .playButtonIcon{
+    color: #fff;
+    
 }
