@@ -1,15 +1,18 @@
 import MyIcon from '../General/MyIcon'
 import MyButtonIcon from '../General/MyIconButton'
-import { BsAppIndicator, BsFillPlayFill } from 'react-icons/bs'
-import { HiOutlineHeart, HiHeart} from 'react-icons/hi'
-import { MdOutlineMoreHoriz } from 'react-icons/md'
-import { ImCross,ImLoop } from 'react-icons/im'
+import { BsAppIndicator } from 'react-icons/bs'
+import { HiOutlineHeart, HiHeart, HiOutlineVolumeUp, HiOutlineVolumeOff} from 'react-icons/hi'
+import { MdOutlineMoreHoriz, MdOutlinePersonalVideo } from 'react-icons/md'
+import { ImCross,ImLoop,ImPlay2, ImPause } from 'react-icons/im'
 import { FaRandom } from 'react-icons/fa'
 import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io"
+import { GiMicrophone } from 'react-icons/gi'
+import { BiWindows } from 'react-icons/bi'
+import { RiPlayListLine } from 'react-icons/ri'
 import { useState, useRef } from 'react'
 import './MusicPlayer.css'
 
-const isSongLiked = true;
+const isSongLiked = false;
 
 let defaultNotiContent;
 
@@ -24,6 +27,12 @@ else
 function MusicPlayer()
 {
     const [isLike, setIsLike] = useState(isSongLiked);
+
+    const [isRandomPlay, setIsRandomPlay] = useState(false);
+
+    const [isLoop, setIsLoop] = useState(false);
+
+    const [isMusicPlay, setIsMusicPlay] = useState(false);
 
     const [notiContent, setNotiContent] = useState(defaultNotiContent);
 
@@ -50,6 +59,42 @@ function MusicPlayer()
     function handleCloseNoti()
     {
         Noti.current.style.display = 'none';
+    }
+
+    function handleRandomPlay()
+    {
+        if(isRandomPlay===true)
+        {
+            setIsRandomPlay(false);
+        }
+        else
+        {
+            setIsRandomPlay(true);
+        }
+    }
+
+    function handleLoop()
+    {
+        if(isLoop===true)
+        {
+            setIsLoop(false);
+        }
+        else
+        {
+            setIsLoop(true);
+        }
+    }
+
+    function handlePlayMusic()
+    {
+        if(isMusicPlay===true)
+        {
+            setIsMusicPlay(false);
+        }
+        else
+        {
+            setIsMusicPlay(true);
+        }
     }
 
     return(
@@ -82,13 +127,49 @@ function MusicPlayer()
             </div>
 
             <div className='player'>
-                <MyButtonIcon name={FaRandom}/>
-                <MyButtonIcon name={IoMdSkipBackward}/>
-                <div className='playButton'>
-                    <MyIcon name={BsFillPlayFill} className='playButtonIcon'/>
+                <div className='playerDashboard'>
+                    <div className='playerItem'>
+                        <MyButtonIcon name={FaRandom} isSelected = {isRandomPlay} onClick={handleRandomPlay}/>
+                    </div>
+                    <div className='playerItem'>
+                        <MyButtonIcon name={IoMdSkipBackward}/>
+                    </div>
+                    <div className='playerItem playButton' onClick={handlePlayMusic}>
+                        {isMusicPlay ? <MyButtonIcon name={ImPlay2}/>
+                                     : <MyButtonIcon name={ImPause}/>}
+                    </div>
+                    <div className='playerItem'>
+                        <MyButtonIcon name={IoMdSkipForward}/>
+                    </div>
+                    <div className='playerItem'>
+                    <MyButtonIcon name={ImLoop} isSelected = {isLoop} onClick={handleLoop}/>
+                    </div>
                 </div>
-                <MyButtonIcon name={IoMdSkipForward}/>
-                <MyButtonIcon name={ImLoop}/>
+
+                <div className='playerSlider'>
+                    <p className='timeSlider'>0:00</p>
+                    <input type="range" min="1" max="100"/>
+                    <p className='timeSlider'>3:12</p>
+                </div>
+            </div>
+            <div className='moreInfo'>
+                <div className='moreInfoItem'>
+                    <MyButtonIcon name={MdOutlinePersonalVideo}/>
+                </div>
+                <div className='moreInfoItem'>
+                    <MyButtonIcon name={GiMicrophone}/>
+                </div>
+                <div className='moreInfoItem'>
+                    <MyButtonIcon name={BiWindows}/>
+                </div>
+                <div className='moreInfoItem soundControl'>
+                    <MyButtonIcon name={HiOutlineVolumeUp}/>
+                    <input type="range" min="1" max="100"/>
+                </div>
+
+                <div className='playlistButton'>
+                    <MyIcon className='playlistIcon' name={RiPlayListLine}></MyIcon>
+                </div>
             </div>
         </div>
     )
