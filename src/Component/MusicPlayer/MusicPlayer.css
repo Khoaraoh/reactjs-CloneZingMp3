@@ -53,11 +53,48 @@
 }
 
 .musicInfo .likeNoti{
-    display: block;
+    display: none;
     width: 360px;
-    height: 32px;
-    background-color: #670091;
+    background-color: #432275;
     position: fixed;
     top: 75%;
     left: 0px;
+    border-radius: 4px;
+    color: #fff;
+    margin-left: 16px;
+    animation: notiMove ;
+    animation-duration: 3s;
+}
+
+.musicInfo .likeNoti p{
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.musicInfo .likeNoti .iconNoti{
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    margin-right: 8px;
+}
+
+.musicInfo .likeNoti .iconNoti:hover{
+    cursor: pointer;
+}
+
+@keyframes notiMove{
+    0%{
+        margin-left: -350px;
+    }
+    15%{
+        margin-left: 16px;
+    }
+    85%{
+        margin-left: 16px;
+    }
+    100%{
+        margin-left: -350px;
+    }
 }

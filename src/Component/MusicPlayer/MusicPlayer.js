@@ -3,25 +3,51 @@ import MyButtonIcon from '../General/MyIconButton'
 import { BsAppIndicator } from 'react-icons/bs'
 import { HiOutlineHeart, HiHeart} from 'react-icons/hi'
 import { MdOutlineMoreHoriz } from 'react-icons/md'
-import { useState } from 'react'
+import { ImCross } from 'react-icons/im'
+import { useState, useRef } from 'react'
 import './MusicPlayer.css'
 
-const isSongLiked = false;
+const isSongLiked = true;
 
+let defaultNotiContent;
+
+if(isSongLiked === true)
+{
+    defaultNotiContent = 'Đã xóa bài hát khỏi thư viện';
+}
+else
+{
+    defaultNotiContent = 'Đã thêm bài hát vào thư viện';
+}
 function MusicPlayer()
 {
     const [isLike, setIsLike] = useState(isSongLiked);
 
+    const [notiContent, setNotiContent] = useState(defaultNotiContent);
+
+    const Noti = useRef();
+
     function handleLike()
     {
+        Noti.current.style.display = 'block';
         if(isLike)
         {
             setIsLike(false);
+            setNotiContent('Đã xóa bài hát khỏi thư viện');
         }
         else
         {
             setIsLike(true);
+            setNotiContent('Đã thêm bài hát vào thư viện');
         }
+        const notiTimeout = setTimeout(() => {
+            Noti.current.style.display = 'none';
+        }, 2900);
+    }
+
+    function handleCloseNoti()
+    {
+        Noti.current.style.display = 'none';
     }
 
     return(
@@ -45,8 +71,11 @@ function MusicPlayer()
                     <MyButtonIcon name={MdOutlineMoreHoriz} className='icon'></MyButtonIcon>
                 </div> 
 
-                <div className='likeNoti'>
-                    <p>Hello</p>
+                <div className='likeNoti' ref={Noti}>
+                    <p>{notiContent}</p>
+                    <div onClick={handleCloseNoti} className='iconNoti'>
+                        <MyIcon name={ImCross}></MyIcon>
+                    </div>
                 </div>
             </div>
         </div>

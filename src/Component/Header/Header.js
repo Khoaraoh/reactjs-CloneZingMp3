@@ -19,18 +19,18 @@ function Header()
         searchActiveComponent.current.style.display = 'inline-block';
     }
     
-    useState(() => {
-        window.addEventListener('click', (e) => {
-            if (searchActiveComponent.current.contains(e.target))
-            {
-                alert('Focus')
-            }
-            else
-            {
+    // useState(() => {
+    //     window.addEventListener('click', (e) => {
+    //         if (searchActiveComponent.current.contains(e.target))
+    //         {
+    //             alert('Focus')
+    //         }
+    //         else
+    //         {
     
-            }
-        });
-    }, [])
+    //         }
+    //     });
+    // }, [])
 
     return(
         <div className='header'>

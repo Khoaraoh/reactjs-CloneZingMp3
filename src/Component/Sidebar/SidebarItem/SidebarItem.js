@@ -9,7 +9,6 @@ function SidebarItem(props)
     props.datas.map((data, index) =>{
         iconName[index] = data.icon;
     });
-    console.log(iconName)
     return(
         <div className = {props.type === 'main' ? 'main-sidebar' : 'sub-sidebar'}>
             {
