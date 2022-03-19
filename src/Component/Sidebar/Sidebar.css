@@ -61,6 +61,11 @@
     display: inline-block;
 }
 
+.vipUpgradeButton:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 .addPlaylist{
     border-top: 0.5px solid white;
     padding: 14px 28px;
@@ -68,6 +73,11 @@
     font-size: 14px;
     font-weight: 700;
     position: relative;
+}
+
+.addPlaylist:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .addPlaylist .title{

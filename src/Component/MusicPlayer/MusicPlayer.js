@@ -36,11 +36,29 @@ function MusicPlayer()
 
     const [notiContent, setNotiContent] = useState(defaultNotiContent);
 
+    const [isMuted, setIsMuted] = useState(true);
+
+    const currentVolumeValue = useRef();
+
     const Noti = useRef();
 
     function handleLike()
     {
-        Noti.current.style.display = 'block';
+        if(Noti.current.style.display === 'block')
+        {
+            Noti.current.style.display = 'none';
+            setTimeout(() => {
+                Noti.current.style.display = 'block';
+            }, 10)
+        }
+        else
+        {
+            Noti.current.style.display = 'block';
+            const notiTimeout = setTimeout(() => {
+                Noti.current.style.display = 'none';
+            }, 2900);
+            
+        }
         if(isLike)
         {
             setIsLike(false);
@@ -51,6 +69,7 @@ function MusicPlayer()
             setIsLike(true);
             setNotiContent('Đã thêm bài hát vào thư viện');
         }
+        
         const notiTimeout = setTimeout(() => {
             Noti.current.style.display = 'none';
         }, 2900);
@@ -94,6 +113,18 @@ function MusicPlayer()
         else
         {
             setIsMusicPlay(true);
+        }
+    }
+
+    function handleSetMute()
+    {
+        if(isMuted===true)
+        {
+            setIsMuted(false);
+        }
+        else
+        {
+            setIsMuted(true);
         }
     }
 
@@ -162,10 +193,15 @@ function MusicPlayer()
                 <div className='moreInfoItem'>
                     <MyButtonIcon name={BiWindows}/>
                 </div>
-                <div className='moreInfoItem soundControl'>
-                    <MyButtonIcon name={HiOutlineVolumeUp}/>
-                    <input type="range" min="1" max="100"/>
-                </div>
+                {isMuted ? <div className='moreInfoItem soundControl'>
+                                <MyButtonIcon name={HiOutlineVolumeUp} onClick={handleSetMute}/>
+                                <input type="range" min="1" max="100"/>
+                            </div> 
+                         : <div className='moreInfoItem soundControl'>
+                                <MyButtonIcon name={HiOutlineVolumeOff} onClick={handleSetMute}/>
+                                <input type="range" min="1" max="100" value="0"/>
+                            </div>}
+                
 
                 <div className='playlistButton'>
                     <MyIcon className='playlistIcon' name={RiPlayListLine}></MyIcon>

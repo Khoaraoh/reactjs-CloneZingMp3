@@ -15,7 +15,12 @@
     position: relative;
     padding: 8px 25px;
     font-size: 13px;
-    color: #fefefe;
+    color: #cfcccc;
+}
+
+.myLibraryItem:hover{
+    color: #fff;
+    cursor: pointer;
 }
 
 .myLibraryItem span{

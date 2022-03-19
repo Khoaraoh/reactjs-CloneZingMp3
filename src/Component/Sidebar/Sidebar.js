@@ -57,7 +57,12 @@ function Sidebar()
 
     function handleSelectItem(item)
     {
-        setSelectedItem(item)
+        setSelectedItem(item);
+    }
+
+    function handleAddPlaylist()
+    {
+        alert('hi');
     }
     return(
         <div className='sidebar'>
@@ -88,7 +93,7 @@ function Sidebar()
                 <MyLibrary/>
             </div>
 
-            <div className='addPlaylist'>
+            <div className='addPlaylist' onClick={handleAddPlaylist}>
                 <MyIcon name={BiPlus} className='icon'/>
                 <span className='title'>Tạo playlist mới</span>
             </div>
