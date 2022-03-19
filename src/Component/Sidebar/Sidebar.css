@@ -5,6 +5,7 @@
     background-color: #231B2E;
     display: inline-block;
     margin-bottom: 15px;
+    position: fixed;
 }
 
 .logo{
