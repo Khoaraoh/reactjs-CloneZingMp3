@@ -7,7 +7,7 @@ import { MdOutlineEdit } from 'react-icons/md';
 const mydataLibrary = [
     {
         name: "Bài hát",
-        isSelected: false,
+        isSelected: true,
         imgSource: 'https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.13/static/media/my-song.cf0cb0b4.svg'
     },
     {
@@ -27,7 +27,7 @@ const mydataLibrary = [
     },
     {
         name: "Gần đây",
-        isSelected: true,
+        isSelected: false,
         imgSource: 'https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.13/static/media/my-history.374cb625.svg'
     }
 ]
@@ -36,31 +36,62 @@ function MyLibrary()
 {
     const [myLibrary, setMyLibrary] = useState(mydataLibrary)
 
+    const [isShowLibrabySelector, setIsShowLibrabySelector] = useState(false);
+
+    const [cloneLibrary, setCloneLibrary] = useState(mydataLibrary);
+
+    function handleShowLibrabySelector()
+    {
+        if(isShowLibrabySelector===true)
+        {
+            setIsShowLibrabySelector(false);
+        }
+        else
+        {
+            setIsShowLibrabySelector(true);
+        }
+    }
+
     function handleEditCheckbox(name)
     {
-        // let newdata = myLibrary
+        setCloneLibrary(prev => (
+            prev.map(item => {
+                if(item.name === name)
+                {
+                    if(item.isSelected===true)
+                    {
+                        return {...item, isSelected: false};
+                    }
+                    else
+                    {
+                        return {...item, isSelected: true};
+                    }
+                }
+                else
+                {
+                    return item;
+                }
+            })
+        ))
+    }
 
-        // for(var i=0;i<newdata.length;i++)
-        // {
-        //     if(newdata[i].name===name)
-        //     {
-        //         if(newdata[i].isSelected===true)
-        //         {
-        //             newdata[i].isSelected = false
-        //         }
-        //         else
-        //         {
-        //             newdata[i].isSelected = true
-        //         }
-        //     }
-        //     return setMyLibrary(newdata)
-        // }
+    function handleCloseLibrary()
+    {
+        setCloneLibrary(myLibrary);
+        setIsShowLibrabySelector(false);
+    }
+
+    function handleSaveLibrary()
+    {
+        setMyLibrary(cloneLibrary);
+        setIsShowLibrabySelector(false);
     }
 
     return(
         <div className={styles.myLibrary}>
             <p className={styles.title}>Thư viện</p>
             <button 
+                onClick={handleShowLibrabySelector}
                 className={styles.editButton}
                     ><MyIcon name={MdOutlineEdit} className={styles.editIcon}/>
             </button>
@@ -72,26 +103,29 @@ function MyLibrary()
                 </div>
             ))}
 
-            {/* checkbox form */}
-            <div className={styles.editCheckbox}>
+            {isShowLibrabySelector &&
+            <div className={styles.myLibrarySelectorWrapper}>
+                <div className={styles.editCheckbox}>
                 <h3>Thư Viện Cá Nhân</h3>
                 <p className={styles.subtitle}>Bạn có thể tuỳ chỉnh danh sách thư viện cá nhân.</p>
                 <div>
-                    {myLibrary.map((item)=>(
+                    {cloneLibrary.map((item, index)=>(
                         <div className={styles.editCheckboxItem} key={item.name}
                             onClick={() => handleEditCheckbox(item.name)}
                         >
-                            <input type={styles.checkbox} checked={item.isSelected}></input>
+                            <input type='checkbox' checked={item.isSelected}></input>
                             <img src={item.imgSource}></img>
                             <span>{item.name}</span>
                         </div>
                     ))}
                 </div>
                 <div className={styles.button}>
-                    <button className={styles.closeButton}>ĐÓNG</button>
-                    <button className={styles.submitButton}>LƯU</button>
+                    <button className={styles.closeButton} onClick={handleCloseLibrary}>ĐÓNG</button>
+                    <button className={styles.submitButton} onClick={handleSaveLibrary}>LƯU</button>
+                </div>
                 </div>
             </div>
+            }
         </div>
     )
 }

@@ -24,19 +24,6 @@ function Header()
         searchActiveComponent.current.style.display = 'none';
     }
     
-    // useState(() => {
-    //     window.addEventListener('click', (e) => {
-    //         if (searchActiveComponent.current.contains(e.target))
-    //         {
-    //             alert('Focus')
-    //         }
-    //         else
-    //         {
-    
-    //         }
-    //     });
-    // }, [])
-
     return(
         <div className={styles.header}>
             <div className={styles.direction}>
