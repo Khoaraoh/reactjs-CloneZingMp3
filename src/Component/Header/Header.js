@@ -18,6 +18,11 @@ function Header()
     {
         searchActiveComponent.current.style.display = 'inline-block';
     }
+
+    function handleOnBlurSearchInput()
+    {
+        searchActiveComponent.current.style.display = 'none';
+    }
     
     // useState(() => {
     //     window.addEventListener('click', (e) => {
@@ -42,6 +47,7 @@ function Header()
                 <MyIcon name={HiOutlineSearch} className={styles.icon}/>
                 <input 
                     onClick={handleSearchInput}
+                    onBlur={handleOnBlurSearchInput}
                     className={styles.searchInput} 
                     placeholder='Nhập tên bài hát, nghệ sĩ hoặc MV...'>
                 </input>
