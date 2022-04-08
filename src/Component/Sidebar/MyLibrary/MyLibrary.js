@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import styles from './MyLibrary.module.css'
-import MyIcon from '../../General/MyIcon'
-import { MdOutlineEdit } from 'react-icons/md'
+import styles from './MyLibrary.module.css';
+import MyIcon from '../../General/MyIcon';
+import { MdOutlineEdit } from 'react-icons/md';
 
 const mydataLibrary = [
     {

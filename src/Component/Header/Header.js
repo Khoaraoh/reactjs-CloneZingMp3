@@ -1,13 +1,13 @@
-import { useState, useRef } from 'react'
-import { BsArrowLeft, BsArrowRight} from 'react-icons/bs'
-import { HiOutlineSearch } from 'react-icons/hi'
-import { MdShowChart, MdOutlineFileUpload } from 'react-icons/md'
-import { FcTemplate } from 'react-icons/fc'
-import { RiVipDiamondLine } from 'react-icons/ri'
-import { FiSettings } from 'react-icons/fi'
+import { useState, useRef } from 'react';
+import { BsArrowLeft, BsArrowRight} from 'react-icons/bs';
+import { HiOutlineSearch } from 'react-icons/hi';
+import { MdShowChart, MdOutlineFileUpload } from 'react-icons/md';
+import { FcTemplate } from 'react-icons/fc';
+import { RiVipDiamondLine } from 'react-icons/ri';
+import { FiSettings } from 'react-icons/fi';
 
-import MyIcon from '../General/MyIcon'
-import styles from './Header.module.css'
+import MyIcon from '../General/MyIcon';
+import styles from './Header.module.css';
 
 function Header()
 {

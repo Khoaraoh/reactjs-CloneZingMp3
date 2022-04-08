@@ -1,6 +1,5 @@
-import HomePage from './HomePage/HomePage'
-
-import styles from './Content.module.css'
+import HomePage from './HomePage/HomePage';
+import styles from './Content.module.css';
 
 function Content()
 {

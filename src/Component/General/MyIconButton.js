@@ -1,4 +1,4 @@
-import styles from './MyButtonIcon.module.css'
+import styles from './MyButtonIcon.module.css';
 
 function MyButtonIcon(props)
 {

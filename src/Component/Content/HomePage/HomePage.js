@@ -1,7 +1,6 @@
-import Slider from './Slider/Slider'
-import PlaylistCard from './PlaylistCard/PlaylistCard'
-
-import styles from './HomePage.module.css'
+import Slider from './Slider/Slider';
+import PlaylistCard from './PlaylistCard/PlaylistCard';
+import styles from './HomePage.module.css';
 
 const forYou = [
     {

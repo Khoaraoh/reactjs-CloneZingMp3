@@ -1,4 +1,4 @@
-import styles from './PlaylistCard.module.css'
+import styles from './PlaylistCard.module.css';
 
 function PlaylistCard(props)
 {

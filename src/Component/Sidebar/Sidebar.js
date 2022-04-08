@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { MdMusicVideo, MdMultilineChart, MdOutlineRadio, MdOutlineFeed, 
-         MdStarOutline, MdOutlineVideoStable, MdOutlineEdit} from 'react-icons/md'
-import { BiDisc, BiCategoryAlt, BiPlus } from 'react-icons/bi'
-import { FiMusic } from 'react-icons/fi'
+         MdStarOutline, MdOutlineVideoStable, MdOutlineEdit} from 'react-icons/md';
+import { BiDisc, BiCategoryAlt, BiPlus } from 'react-icons/bi';
+import { FiMusic } from 'react-icons/fi';
 
-import styles from './Sidebar.module.css'
-import SidebarItem from './SidebarItem/SidebarItem'
-import MyLibrary from './MyLibrary/MyLibrary'
-import MyIcon from '../General/MyIcon'
+import styles from './Sidebar.module.css';
+import SidebarItem from './SidebarItem/SidebarItem';
+import MyLibrary from './MyLibrary/MyLibrary';
+import MyIcon from '../General/MyIcon';
 
 const mainsidebarData = [
     {

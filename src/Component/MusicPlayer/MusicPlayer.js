@@ -1,17 +1,17 @@
-import MyIcon from '../General/MyIcon'
-import MyButtonIcon from '../General/MyIconButton'
-import { BsAppIndicator } from 'react-icons/bs'
-import { HiOutlineHeart, HiHeart, HiOutlineVolumeUp, HiOutlineVolumeOff} from 'react-icons/hi'
-import { MdOutlineMoreHoriz, MdOutlinePersonalVideo } from 'react-icons/md'
-import { ImCross,ImLoop,ImPlay2, ImPause } from 'react-icons/im'
-import { FaRandom } from 'react-icons/fa'
-import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io"
-import { GiMicrophone } from 'react-icons/gi'
-import { BiWindows } from 'react-icons/bi'
-import { RiPlayListLine } from 'react-icons/ri'
-import { useState, useRef } from 'react'
+import { BsAppIndicator } from 'react-icons/bs';
+import { HiOutlineHeart, HiHeart, HiOutlineVolumeUp, HiOutlineVolumeOff} from 'react-icons/hi';
+import { MdOutlineMoreHoriz, MdOutlinePersonalVideo } from 'react-icons/md';
+import { ImCross,ImLoop,ImPlay2, ImPause } from 'react-icons/im';
+import { FaRandom } from 'react-icons/fa';
+import { IoMdSkipBackward, IoMdSkipForward } from 'react-icons/io';
+import { GiMicrophone } from 'react-icons/gi';
+import { BiWindows } from 'react-icons/bi';
+import { RiPlayListLine } from 'react-icons/ri';
+import { useState, useRef } from 'react';
 
-import styles from './MusicPlayer.module.css'
+import styles from './MusicPlayer.module.css';
+import MyIcon from '../General/MyIcon';
+import MyButtonIcon from '../General/MyIconButton';
 
 const isSongLiked = false;
 
