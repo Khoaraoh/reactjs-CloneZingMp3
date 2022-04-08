@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import './MyLibrary.css'
+import styles from './MyLibrary.module.css'
 import MyIcon from '../../General/MyIcon'
 import { MdOutlineEdit } from 'react-icons/md'
 
@@ -58,38 +58,38 @@ function MyLibrary()
     }
 
     return(
-        <div className='myLibrary'>
-            <p className='title'>Thư viện</p>
+        <div className={styles.myLibrary}>
+            <p className={styles.title}>Thư viện</p>
             <button 
-                className='editButton'
-                    ><MyIcon name={MdOutlineEdit} className='editIcon'/>
+                className={styles.editButton}
+                    ><MyIcon name={MdOutlineEdit} className={styles.editIcon}/>
             </button>
             {myLibrary.map((item, index)=>(
                 item.isSelected && 
-                <div className='myLibraryItem' key={index}>
+                <div className={styles.myLibraryItem} key={index}>
                     <img src={item.imgSource}></img>
                     <span>{item.name}</span>
                 </div>
             ))}
 
             {/* checkbox form */}
-            <div className='editCheckbox'>
+            <div className={styles.editCheckbox}>
                 <h3>Thư Viện Cá Nhân</h3>
-                <p className='subtitle'>Bạn có thể tuỳ chỉnh danh sách thư viện cá nhân.</p>
+                <p className={styles.subtitle}>Bạn có thể tuỳ chỉnh danh sách thư viện cá nhân.</p>
                 <div>
                     {myLibrary.map((item)=>(
-                        <div className='editCheckboxItem' key={item.name}
+                        <div className={styles.editCheckboxItem} key={item.name}
                             onClick={() => handleEditCheckbox(item.name)}
                         >
-                            <input type='checkbox' checked={item.isSelected}></input>
+                            <input type={styles.checkbox} checked={item.isSelected}></input>
                             <img src={item.imgSource}></img>
                             <span>{item.name}</span>
                         </div>
                     ))}
                 </div>
-                <div className='button'>
-                    <button className='closeButton'>ĐÓNG</button>
-                    <button className='submitButton'>LƯU</button>
+                <div className={styles.button}>
+                    <button className={styles.closeButton}>ĐÓNG</button>
+                    <button className={styles.submitButton}>LƯU</button>
                 </div>
             </div>
         </div>

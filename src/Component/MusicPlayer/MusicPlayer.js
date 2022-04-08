@@ -10,7 +10,8 @@ import { GiMicrophone } from 'react-icons/gi'
 import { BiWindows } from 'react-icons/bi'
 import { RiPlayListLine } from 'react-icons/ri'
 import { useState, useRef } from 'react'
-import './MusicPlayer.css'
+
+import styles from './MusicPlayer.module.css'
 
 const isSongLiked = false;
 
@@ -129,82 +130,82 @@ function MusicPlayer()
     }
 
     return(
-        <div className='musicPlayer'>
-            <div className='musicInfo'>
-                <img className='image' src='https://photo-resize-zmp3.zadn.vn/w240_r1x1_webp/cover/b/1/1/4/b1141462092869c7c8f755e824d5d609.jpg'></img>
+        <div className={styles.musicPlayer}>
+            <div className={styles.musicInfo}>
+                <img className={styles.image} src='https://photo-resize-zmp3.zadn.vn/w240_r1x1_webp/cover/b/1/1/4/b1141462092869c7c8f755e824d5d609.jpg'></img>
                 
-                <div className='songInfo'>
-                    <span className='songName'>THATS WHAT I WANT</span>
+                <div className={styles.songInfo}>
+                    <span className={styles.songName}>THATS WHAT I WANT</span>
                     <div>
-                        <MyIcon name={BsAppIndicator} className='singerIcon'/>
-                        <p className='singerName'>Lil Nas X</p>
+                        <MyIcon name={BsAppIndicator} className={styles.singerIcon}/>
+                        <p className={styles.singerName}>Lil Nas X</p>
                     </div>
                 </div>
 
-                <div className='musicInfoIcon'>
-                    {isLike ? <MyButtonIcon name={HiHeart} className='icon' isSelected = {isLike} onClick = {handleLike}
+                <div className={styles.musicInfoIcon}>
+                    {isLike ? <MyButtonIcon name={HiHeart} className={styles.icon} isSelected = {isLike} onClick = {handleLike}
                               ></MyButtonIcon>
-                            : <MyButtonIcon name={HiOutlineHeart} className='icon' isSelected = {isLike} onClick = {handleLike}
+                            : <MyButtonIcon name={HiOutlineHeart} className={styles.icon} isSelected = {isLike} onClick = {handleLike}
                             ></MyButtonIcon>}
-                    <MyButtonIcon name={MdOutlineMoreHoriz} className='icon'></MyButtonIcon>
+                    <MyButtonIcon name={MdOutlineMoreHoriz} className={styles.icon}></MyButtonIcon>
                 </div> 
 
-                <div className='likeNoti' ref={Noti}>
+                <div className={styles.likeNoti} ref={Noti}>
                     <p>{notiContent}</p>
-                    <div onClick={handleCloseNoti} className='iconNoti'>
+                    <div onClick={handleCloseNoti} className={styles.iconNoti}>
                         <MyIcon name={ImCross}></MyIcon>
                     </div>
                 </div>
             </div>
 
-            <div className='player'>
-                <div className='playerDashboard'>
-                    <div className='playerItem'>
+            <div className={styles.player}>
+                <div className={styles.playerDashboard}>
+                    <div className={styles.playerItem}>
                         <MyButtonIcon name={FaRandom} isSelected = {isRandomPlay} onClick={handleRandomPlay}/>
                     </div>
-                    <div className='playerItem'>
+                    <div className={styles.playerItem}>
                         <MyButtonIcon name={IoMdSkipBackward}/>
                     </div>
-                    <div className='playerItem playButton' onClick={handlePlayMusic}>
+                    <div className={`${styles.playerItem} ${styles.playButton}`} onClick={handlePlayMusic}>
                         {isMusicPlay ? <MyButtonIcon name={ImPlay2}/>
                                      : <MyButtonIcon name={ImPause}/>}
                     </div>
-                    <div className='playerItem'>
+                    <div className={styles.playerItem}>
                         <MyButtonIcon name={IoMdSkipForward}/>
                     </div>
-                    <div className='playerItem'>
+                    <div className={styles.playerItem}>
                     <MyButtonIcon name={ImLoop} isSelected = {isLoop} onClick={handleLoop}/>
                     </div>
                 </div>
 
-                <div className='playerSlider'>
-                    <p className='timeSlider'>0:00</p>
+                <div className={styles.playerSlider}>
+                    <p className={styles.timeSlider}>0:00</p>
                     <input type="range" min="1" max="100"/>
-                    <p className='timeSlider'>3:12</p>
+                    <p className={styles.timeSlider}>3:12</p>
                 </div>
             </div>
-            <div className='moreInfo'>
-                <div className='moreInfoItem'>
+            <div className={styles.moreInfo}>
+                <div className={styles.moreInfoItem}>
                     <MyButtonIcon name={MdOutlinePersonalVideo}/>
                 </div>
-                <div className='moreInfoItem'>
+                <div className={styles.moreInfoItem}>
                     <MyButtonIcon name={GiMicrophone}/>
                 </div>
-                <div className='moreInfoItem'>
+                <div className={styles.moreInfoItem}>
                     <MyButtonIcon name={BiWindows}/>
                 </div>
-                {isMuted ? <div className='moreInfoItem soundControl'>
+                {isMuted ? <div className={`${styles.moreInfoItem} ${styles.soundControl}`}>
                                 <MyButtonIcon name={HiOutlineVolumeUp} onClick={handleSetMute}/>
                                 <input type="range" min="1" max="100"/>
                             </div> 
-                         : <div className='moreInfoItem soundControl'>
+                         : <div className={`${styles.moreInfoItem} ${styles.soundControl}`}>
                                 <MyButtonIcon name={HiOutlineVolumeOff} onClick={handleSetMute}/>
                                 <input type="range" min="1" max="100" value="0"/>
                             </div>}
                 
 
-                <div className='playlistButton'>
-                    <MyIcon className='playlistIcon' name={RiPlayListLine}></MyIcon>
+                <div className={styles.playlistButton}>
+                    <MyIcon className={styles.playlistIcon} name={RiPlayListLine}></MyIcon>
                 </div>
             </div>
         </div>

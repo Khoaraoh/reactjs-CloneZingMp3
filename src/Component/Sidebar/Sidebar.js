@@ -4,7 +4,7 @@ import { MdMusicVideo, MdMultilineChart, MdOutlineRadio, MdOutlineFeed,
 import { BiDisc, BiCategoryAlt, BiPlus } from 'react-icons/bi'
 import { FiMusic } from 'react-icons/fi'
 
-import './Sidebar.css'
+import styles from './Sidebar.module.css'
 import SidebarItem from './SidebarItem/SidebarItem'
 import MyLibrary from './MyLibrary/MyLibrary'
 import MyIcon from '../General/MyIcon'
@@ -65,8 +65,8 @@ function Sidebar()
         alert('hi');
     }
     return(
-        <div className='sidebar'>
-            <img className='logo' src='https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg'></img>
+        <div className={styles.sidebar}>
+            <img className={styles.logo} src='https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg'></img>
             
             <SidebarItem
                 datas = {mainsidebarData}
@@ -75,9 +75,9 @@ function Sidebar()
                 type = "main"
             ></SidebarItem>
             
-            <div className='divide'></div>
+            <div className={styles.divide}></div>
             
-            <div className='subMenu'>
+            <div className={styles.subMenu}>
                 <SidebarItem
                     datas = {subsidebarData}
                     onClick ={handleSelectItem}
@@ -85,17 +85,17 @@ function Sidebar()
                     type = "sub"
                 ></SidebarItem>
 
-                <div className='vipUpgrade'>
+                <div className={styles.vipUpgrade}>
                     <p>Nghe nhạc không quảng cáo cùng kho nhạc VIP</p>
-                    <button className='vipUpgradeButton'>Nâng cấp VIP</button>
+                    <button className={styles.vipUpgradeButton}>Nâng cấp VIP</button>
                 </div>
 
                 <MyLibrary/>
             </div>
 
-            <div className='addPlaylist' onClick={handleAddPlaylist}>
-                <MyIcon name={BiPlus} className='icon'/>
-                <span className='title'>Tạo playlist mới</span>
+            <div className={styles.addPlaylist} onClick={handleAddPlaylist}>
+                <MyIcon name={BiPlus} className={styles.icon}/>
+                <span className={styles.title}>Tạo playlist mới</span>
             </div>
         </div>
     )

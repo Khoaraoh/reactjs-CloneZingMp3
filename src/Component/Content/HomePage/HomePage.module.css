@@ -1,0 +1,11 @@
+.homePageContainer{
+    margin: 60px
+}
+
+.forYou .forYouContent{
+    display: flex;
+}
+
+.forYou .forYouContent .forYouPlaylistCard{
+    width: 20%;
+}

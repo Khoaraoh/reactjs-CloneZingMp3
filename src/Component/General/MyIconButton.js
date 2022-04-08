@@ -1,12 +1,12 @@
-import './MyButtonIcon.css'
+import styles from './MyButtonIcon.module.css'
 
 function MyButtonIcon(props)
 {
     const MyIconName = props.name;
     return(
-        <button className='button' onClick = {props.onClick}>
-            {props.isSelected ? <MyIconName className = {"buttonIconSelected " + props.className}/> 
-                              : <MyIconName className = {"buttonIcon " + props.className} />}
+        <button className={styles.button} onClick = {props.onClick}>
+            {props.isSelected ? <MyIconName className = {`${styles.buttonIconSelected} ${props.className}`}/> 
+                              : <MyIconName className = {`${styles.buttonIcon} ${props.className}`} />}
         </button>
     )
 }

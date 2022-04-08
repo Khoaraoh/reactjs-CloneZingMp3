@@ -1,11 +1,11 @@
 import HomePage from './HomePage/HomePage'
 
-import './Content.css'
+import styles from './Content.module.css'
 
 function Content()
 {
     return(
-        <div className='contentContainer'>
+        <div className={styles.contentContainer}>
             <HomePage/>
         </div>
     )
