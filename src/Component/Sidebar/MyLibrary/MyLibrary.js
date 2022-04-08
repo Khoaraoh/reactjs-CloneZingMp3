@@ -40,6 +40,8 @@ function MyLibrary()
 
     const [cloneLibrary, setCloneLibrary] = useState(mydataLibrary);
 
+    const [isShowEditButton, setIsShowEditButton] = useState(false);
+
     function handleShowLibrabySelector()
     {
         if(isShowLibrabySelector===true)
@@ -87,14 +89,27 @@ function MyLibrary()
         setIsShowLibrabySelector(false);
     }
 
+    function handleShowEditButton()
+    {
+        setIsShowEditButton(true);
+    }
+
+    function handleHideEditButton()
+    {
+        setIsShowEditButton(false);
+    }
+
+
     return(
-        <div className={styles.myLibrary}>
+        <div className={styles.myLibrary} onMouseEnter={handleShowEditButton} onMouseLeave={handleHideEditButton}>
             <p className={styles.title}>Thư viện</p>
+            {isShowEditButton &&
             <button 
                 onClick={handleShowLibrabySelector}
                 className={styles.editButton}
                     ><MyIcon name={MdOutlineEdit} className={styles.editIcon}/>
             </button>
+            }
             {myLibrary.map((item, index)=>(
                 item.isSelected && 
                 <div className={styles.myLibraryItem} key={index}>
