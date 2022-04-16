@@ -7,7 +7,7 @@ import { IoMdSkipBackward, IoMdSkipForward } from 'react-icons/io';
 import { GiMicrophone } from 'react-icons/gi';
 import { BiWindows } from 'react-icons/bi';
 import { RiPlayListLine } from 'react-icons/ri';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 import styles from './MusicPlayer.module.css';
 import MyIcon from '../General/MyIcon';
@@ -33,15 +33,28 @@ function MusicPlayer()
 
     const [isLoop, setIsLoop] = useState(false);
 
-    const [isMusicPlay, setIsMusicPlay] = useState(false);
+    const [isMusicPlay, setIsMusicPlay] = useState(true);
 
     const [notiContent, setNotiContent] = useState(defaultNotiContent);
 
-    const [isMuted, setIsMuted] = useState(true);
+    const [currentTime, setCurrentTime] = useState(0);
 
-    const currentVolumeValue = useRef();
+    const [volume, setVolume] = useState(50);
+
+    const maxTime = 242;
+
+    const [oldVolumeValue, setOldVolumeValue] = useState(50);
 
     const Noti = useRef();
+
+    useEffect(() => {
+        var timerId = setInterval(() => {
+            if(currentTime <= maxTime)
+                {
+                    setCurrentTime((prev) => prev + 1);
+                }
+        }, 1000);
+    }, [isMusicPlay]);
 
     function handleLike()
     {
@@ -119,13 +132,28 @@ function MusicPlayer()
 
     function handleSetMute()
     {
-        if(isMuted===true)
+        if(volume===0)
         {
-            setIsMuted(false);
+            setVolume(oldVolumeValue);
         }
         else
         {
-            setIsMuted(true);
+            setOldVolumeValue(volume);
+            setVolume(0);
+        }
+    }
+
+    function handleChangeTime(e)
+    {
+        setCurrentTime(e.target.value*maxTime/1000);
+    }
+
+    function handleChangeVolume(e)
+    {
+        setVolume(e.target.value);
+        if(e.target.value==0)
+        {
+            handleSetMute();
         }
     }
 
@@ -179,9 +207,18 @@ function MusicPlayer()
                 </div>
 
                 <div className={styles.playerSlider}>
-                    <p className={styles.timeSlider}>0:00</p>
-                    <input type="range" min="1" max="100"/>
-                    <p className={styles.timeSlider}>3:12</p>
+                    { Math.floor(currentTime%60)<10 
+                    ? <p className={styles.timeSlider}>{Math.floor(currentTime/60)}:0{Math.floor(currentTime%60)}</p>
+                    : <p className={styles.timeSlider}>{Math.floor(currentTime/60)}:{Math.floor(currentTime%60)}</p>
+                    }
+                    
+                    <p className={styles.timeSlider}></p>
+                    <input type="range" min="0" max="1000" value={(currentTime/maxTime)*1000} onChange={handleChangeTime}/>
+                    { maxTime%60<10 
+                    ? <p className={styles.timeSlider}>{Math.floor(maxTime/60)}:0{maxTime%60}</p>
+                    : <p className={styles.timeSlider}>{Math.floor(maxTime/60)}:{maxTime%60}</p>
+                    }
+                    
                 </div>
             </div>
             <div className={styles.moreInfo}>
@@ -194,15 +231,11 @@ function MusicPlayer()
                 <div className={styles.moreInfoItem}>
                     <MyButtonIcon name={BiWindows}/>
                 </div>
-                {isMuted ? <div className={`${styles.moreInfoItem} ${styles.soundControl}`}>
-                                <MyButtonIcon name={HiOutlineVolumeUp} onClick={handleSetMute}/>
-                                <input type="range" min="1" max="100"/>
-                            </div> 
-                         : <div className={`${styles.moreInfoItem} ${styles.soundControl}`}>
-                                <MyButtonIcon name={HiOutlineVolumeOff} onClick={handleSetMute}/>
-                                <input type="range" min="1" max="100" value="0"/>
-                            </div>}
-                
+                <div className={`${styles.moreInfoItem} ${styles.soundControl}`}>
+                    {volume===0 ? <MyButtonIcon name={HiOutlineVolumeOff} onClick={handleSetMute}/>
+                                : <MyButtonIcon name={HiOutlineVolumeUp} onClick={handleSetMute}/>}
+                    <input type="range" min="0" max="100" value={volume} onChange={handleChangeVolume}/>
+                </div> 
 
                 <div className={styles.playlistButton}>
                     <MyIcon className={styles.playlistIcon} name={RiPlayListLine}></MyIcon>
