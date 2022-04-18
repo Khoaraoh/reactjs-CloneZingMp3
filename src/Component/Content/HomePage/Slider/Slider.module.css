@@ -10,4 +10,29 @@
     display: inline-block;
     padding: 0px 20px;
     border-radius: 10%;
+    position: relative;
+}
+
+.slider img:nth-child(2),
+.slider img:nth-child(3){
+    animation-name: sliderMoveLeft;
+    animation-duration: 0.5s;
+    animation-delay: 4.5s;
+}
+
+.slider img:first-child{
+    animation-name: sliderMoveRight;
+    animation-duration: 0.5s;
+    animation-delay: 4.5s;
+}
+
+@keyframes sliderMoveLeft {
+    from {transform: translateX(0px);}
+    to {transform: translateX(-100%);}
+}
+
+@keyframes sliderMoveRight {
+    0% {transform: translateX(0px); opacity: 0.1;}
+    99% {transform: translateX(200%); opacity: 0.1;}
+    100% {opacity: 1;}
 }

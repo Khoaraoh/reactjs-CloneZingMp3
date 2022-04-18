@@ -54,7 +54,7 @@ function MusicPlayer()
                     setCurrentTime((prev) => prev + 1);
                 }
         }, 1000);
-    }, [isMusicPlay]);
+    }, []);
 
     function handleLike()
     {
@@ -195,8 +195,8 @@ function MusicPlayer()
                         <MyButtonIcon name={IoMdSkipBackward}/>
                     </div>
                     <div className={`${styles.playerItem} ${styles.playButton}`} onClick={handlePlayMusic}>
-                        {isMusicPlay ? <MyButtonIcon name={ImPlay2}/>
-                                     : <MyButtonIcon name={ImPause}/>}
+                        {isMusicPlay ? <MyButtonIcon name={ImPause}/>
+                                     : <MyButtonIcon name={ImPlay2}/>}
                     </div>
                     <div className={styles.playerItem}>
                         <MyButtonIcon name={IoMdSkipForward}/>

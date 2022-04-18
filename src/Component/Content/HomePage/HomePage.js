@@ -36,7 +36,7 @@ function HomePage()
         <div className={styles.homePageContainer}>
             <Slider/>
             
-            <div className={styles.recently}>
+            {/* <div className={styles.recently}>
                 <h2>Gần Đây</h2>
             </div>
 
@@ -50,7 +50,7 @@ function HomePage()
                         />
                     ))}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

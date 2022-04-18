@@ -22,12 +22,12 @@ const mydataLibrary = [
     },
     {
         name: "Nhạc tải lên",
-        isSelected: true,
+        isSelected: false,
         imgSource: 'https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.13/static/media/my-album.24e3332b.svg'
     },
     {
         name: "Gần đây",
-        isSelected: false,
+        isSelected: true,
         imgSource: 'https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.13/static/media/my-history.374cb625.svg'
     }
 ]

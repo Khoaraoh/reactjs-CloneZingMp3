@@ -87,7 +87,7 @@
 }
 
 .sidebar .subMenu{
-    max-height: 200px;
+    max-height: 230px;
     overflow: scroll;
     overflow-x: hidden;
 }
